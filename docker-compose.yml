@@ -1,7 +1,6 @@
 version: "3"
 services:
-  adventofcode:
+  euler:
     build: .
     volumes:
       - .:/opt/app
-    tty: true
