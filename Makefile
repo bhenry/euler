@@ -1,7 +1,7 @@
 PROJECT = $(shell basename $(CURDIR))
 DC = docker compose
 DCR = ${DC} run --rm --no-deps ${PROJECT}
-workfile = euler/$(shell printf '%03d' $(PROB)).py
+workfile = euler/p$(shell printf '%03d' $(PROB)).py
 
 .PHONY: init
 init: destroy build shell ## Setup project with python resources
