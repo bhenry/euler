@@ -1,7 +1,7 @@
 PROJECT = $(shell basename $(CURDIR))
 DC = docker compose
 DCR = ${DC} run --rm --no-deps ${PROJECT}
-workdir = euler/$(shell printf '%02d' $(PROB))
+workfile = euler/$(shell printf '%03d' $(PROB)).py
 
 .PHONY: init
 init: destroy build shell ## Setup project with python resources
@@ -24,14 +24,13 @@ shell: ##- Run a bash shell
 
 .PHONY: run
 run: ## Run the project
-	${DCR} python ${workdir}/code.py
+	${DCR} python ${workfile}
 
 .PHONY: prob
 prob: ## Create a new problem
-	mkdir -p ${workdir}
-	cp -n template/* ${workdir}/
-	git add ${workdir}
+	touch ${workfile}
+	git add ${workfile}
 
 .PHONY: what
 what: ## What prob is it?
-	@echo ${workdir}
+	@echo ${workfile}
