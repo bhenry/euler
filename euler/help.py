@@ -24,3 +24,7 @@ def is_prime(n):
         if n % i == 0:
             return False
     return True
+
+def is_palindrome(n):
+    n = str(n)
+    return n == n[::-1]
