@@ -17,12 +17,17 @@ def fib(n):
     fibcache[n] = c
     return c
 
+prime_cache = {2: True}
 def is_prime(n):
+    if n in prime_cache:
+        return prime_cache[n]
     if n < 2:
         return False
     for i in range(2, int(sqrt(abs(n)))+1):
         if n % i == 0:
+            prime_cache[n] = False
             return False
+    prime_cache[n] = True
     return True
 
 def is_palindrome(n):
