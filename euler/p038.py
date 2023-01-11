@@ -8,7 +8,7 @@ def is_pandigital(s):
 mx = 0
 n = 1
 lim = 987654321
-while n < lim // 3:
+while n < 10000:
     n += 1
     m = 2
     biggest = 0
