@@ -33,3 +33,10 @@ def is_prime(n):
 def is_palindrome(n):
     n = str(n)
     return n == n[::-1]
+
+def is_pandigital(s):
+    if len(s) != 9:
+        return False
+    if set(s) != set('123456789'):
+        return False
+    return True

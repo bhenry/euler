@@ -1,9 +1,4 @@
-def is_pandigital(s):
-    if len(s) != 9:
-        return False
-    if set(s) != set('123456789'):
-        return False
-    return True
+from help import is_pandigital
 
 mx = 0
 n = 1
