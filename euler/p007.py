@@ -1,5 +1,3 @@
-#What is the 10 001st prime number?
-
 from help import is_prime
 
 c = 0

@@ -1,4 +1,3 @@
-# Evaluate the sum of all the amicable numbers under 10000
 def is_amicable(n):
     s = 0
     for i in range(1, n):
