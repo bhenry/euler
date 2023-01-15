@@ -9,9 +9,9 @@ while True:
     for j in range(1, len(s)):
         b = int("1" * len(s), 2)
         for k in range(b):
+            bs = bin(k)[2:]
             cs = set()
             for l in range(10):
-                bs = bin(k)[2:]
                 t = ""
                 for x,y in zip(s, bs):
                     if y == '1':
