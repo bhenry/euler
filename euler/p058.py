@@ -1,24 +1,20 @@
-W = 1001
-g = {}
-l = (0,0)
-facings = [(1,0), (0,-1), (-1,0), (0,1)]
-f = -1
-for i in range(W*W):
-    if i == 0:
-        g[(0,0)] = 1
-        continue
-    r = facings[(f + 1) % 4]
-    n = (l[0] + r[0], l[1] + r[1])
-    if n not in g:
-        l = n
-        g[l] = i + 1
-        f = (f + 1) % 4
-    else:
-        l = (l[0] + facings[f][0], l[1] + facings[f][1])
-        g[l] = i + 1
+from help import is_prime
 
-s = 0
-for i in range(-(W//2),W//2+1):
-    s += g[(i,i)]
-    s += g[(i,-i)]
-print(s - 1)
+square = 1
+d = 1
+pds = 0
+ds = 1
+while True:
+    a = d + 2 * square
+    b = a + 2 * square
+    c = b + 2 * square
+    d = c + 2 * square
+    square += 1
+    ds += 4
+    for n in (a,b,c,d):
+        if is_prime(n):
+            pds += 1
+    if pds / ds < 0.1:
+        break
+
+print(2 * square - 1)
